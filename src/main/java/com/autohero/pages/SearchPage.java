@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@DefaultUrl("https://www.autohero.com/de/search/")
+@DefaultUrl("/de/search/")
 public class SearchPage extends PageObject {
 
     @FindBy(css = "[data-qa-selector='filter-year']")
