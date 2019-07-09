@@ -3,6 +3,7 @@ package com.autohero.pages;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -22,13 +23,10 @@ public class SearchPage extends PageObject {
     @FindBy(css = "[name='sort']")
     WebElementFacade filterByDescending;
 
-    @FindBy(css = "ul > [data-qa-selector-value='2015']")
-    WebElementFacade searchFilterSelectedOptions;
-
-    @FindAll({@FindBy(xpath = "//li[@class='specItem___2gMHn'][1]"),})
+    @FindAll({@FindBy(xpath = "//li[@data-qa-selector='spec'][1]")})
     List<WebElement> carsYears;
 
-    @FindAll({@FindBy(css = "[data-qa-selector='price']"),})
+    @FindAll({@FindBy(css = "[data-qa-selector='price']")})
     List<WebElement> carsPrices;
 
     public void clickByYearFilterMenu() {
@@ -45,8 +43,9 @@ public class SearchPage extends PageObject {
         filterByDescending.selectByVisibleText(option);
     }
 
-    public void waitFilterToBeApplied() {
-        searchFilterSelectedOptions.waitUntilVisible();
+    public void waitYearFilterToBeApplied(int year) {
+        String yearFilterCssSelector = String.format("ul > [data-qa-selector-value='%d']", year);
+        element(By.cssSelector(yearFilterCssSelector)).waitUntilVisible();
     }
 
     public List<Integer> getProductionYearList() {

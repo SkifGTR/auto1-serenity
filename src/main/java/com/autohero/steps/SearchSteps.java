@@ -28,7 +28,7 @@ public class SearchSteps extends ScenarioSteps {
     @Step
     public SearchSteps select_option_year_filter_menu(int year) {
         page.selectYearFilterByOption(year);
-        page.waitFilterToBeApplied();
+        page.waitYearFilterToBeApplied(year);
         return this;
     }
 
