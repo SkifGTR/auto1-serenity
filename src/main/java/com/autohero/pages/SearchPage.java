@@ -1,4 +1,4 @@
-package pages;
+package com.autohero.pages;
 
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
@@ -13,16 +13,16 @@ import java.util.stream.Collectors;
 @DefaultUrl("https://www.autohero.com/de/search/")
 public class SearchPage extends PageObject {
 
-    @FindBy(xpath = "//div[@data-qa-selector='filter-year']")
+    @FindBy(css = "[data-qa-selector='filter-year']")
     WebElement filterByYearMenu;
 
-    @FindBy(xpath = "//select[@name='yearRange.min']")
+    @FindBy(xpath = "[@name='yearRange.min']")
     WebElementFacade filterByYearOption;
 
     @FindBy(xpath = "//select[@name='sort']")
     WebElementFacade filterByDescending;
 
-    @FindBy(xpath = "//button[contains(text(),'Erstzulassung von')]")
+    @FindBy(xpath = "//button[contains(@class,'filterButton___3dGDs')]")
     WebElementFacade searchFilterSelectedOptions;
 
     @FindAll({@FindBy(xpath = "//li[@class='specItem___2gMHn'][1]"),})

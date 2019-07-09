@@ -1,8 +1,8 @@
-package steps;
+package com.autohero.steps;
 
+import com.autohero.pages.SearchPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import pages.SearchPage;
 
 import java.util.Comparator;
 
@@ -15,6 +15,7 @@ public class SearchSteps extends ScenarioSteps {
     @Step
     public SearchSteps open_search_page() {
         page.open();
+        getDriver().manage().window().maximize();
         return this;
     }
 
@@ -39,7 +40,7 @@ public class SearchSteps extends ScenarioSteps {
 
     @Step
     public void verify_cars_registration_year_is_greater_than(int year) {
-        assertThat(page.getProductionYearList()).allMatch(i -> i > year);
+        assertThat(page.getProductionYearList()).allMatch(i -> i >= year);
     }
 
     @Step

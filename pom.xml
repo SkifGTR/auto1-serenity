@@ -40,7 +40,12 @@
             <artifactId>assertj-core</artifactId>
             <version>3.12.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>3.6.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -86,5 +91,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
