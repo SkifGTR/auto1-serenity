@@ -16,19 +16,19 @@ public class SearchPage extends PageObject {
     @FindBy(css = "[data-qa-selector='filter-year']")
     WebElement filterByYearMenu;
 
-    @FindBy(xpath = "[@name='yearRange.min']")
+    @FindBy(css = "[name='yearRange.min']")
     WebElementFacade filterByYearOption;
 
-    @FindBy(xpath = "//select[@name='sort']")
+    @FindBy(css = "[name='sort']")
     WebElementFacade filterByDescending;
 
-    @FindBy(xpath = "//button[contains(@class,'filterButton___3dGDs')]")
+    @FindBy(css = "ul > [data-qa-selector-value='2015']")
     WebElementFacade searchFilterSelectedOptions;
 
     @FindAll({@FindBy(xpath = "//li[@class='specItem___2gMHn'][1]"),})
     List<WebElement> carsYears;
 
-    @FindAll({@FindBy(xpath = "//div[@data-qa-selector='price']"),})
+    @FindAll({@FindBy(css = "[data-qa-selector='price']"),})
     List<WebElement> carsPrices;
 
     public void clickByYearFilterMenu() {
