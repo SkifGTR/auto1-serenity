@@ -37,7 +37,7 @@ public class SearchTest {
     }
 
     @Test
-    public void verifySearchByYearAndSortByDescendingPrice() throws InterruptedException {
+    public void verifySearchByYearAndSortByDescendingPrice() {
         int yearToVerify = 2015;
         steps.open_search_page()
                 .click_by_year_filter_menu()
