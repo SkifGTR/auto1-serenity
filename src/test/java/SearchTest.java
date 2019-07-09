@@ -43,7 +43,6 @@ public class SearchTest {
                 .click_by_year_filter_menu()
                 .select_option_year_filter_menu(yearToVerify)
                 .select_sorting_option("Höchster Preis");
-        Thread.sleep(3000);
         steps.verify_cars_registration_year_is_greater_than(yearToVerify);
         steps.verify_cars_prices_sorted_by_descending();
     }
